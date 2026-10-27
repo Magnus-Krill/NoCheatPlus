@@ -248,8 +248,12 @@ public class MaterialUtil {
                     ), "standing_banner"));
 
     public static final Set<Material> BEDS = Collections.unmodifiableSet(addBlocks(
-            BridgeMaterial.getBySuffix("_bed", AlmostBoolean.YES, 
+            BridgeMaterial.getBySuffix("_bed", AlmostBoolean.YES,
                     "legacy", "straw_bed"), "bed_block"));
+
+    /** Beds with 26.3 collision and movement behavior distinct from regular beds. */
+    public static final Set<Material> STRAW_BEDS = Collections.unmodifiableSet(
+            BridgeMaterial.getBySuffix("straw_bed", AlmostBoolean.YES));
 
     public static final Set<Material> BOATS;
     public static final Set<Material> ALL_SEEDS;
@@ -388,6 +392,18 @@ public class MaterialUtil {
     public static final Set<Material> SLABS = Collections.unmodifiableSet(addBlocks(
             BridgeMaterial.getBySuffix(Arrays.asList("_slab", "_step"), 
                     AlmostBoolean.YES, "legacy"), "step"));
+
+    public static final Set<Material> WOOL_SLABS = Collections.unmodifiableSet(
+            BridgeMaterial.getBySuffix("_wool_slab", AlmostBoolean.YES));
+
+    public static final Set<Material> CONCRETE_SLABS = Collections.unmodifiableSet(
+            BridgeMaterial.getBySuffix("_concrete_slab", AlmostBoolean.YES));
+
+    public static final Set<Material> WOOL_STAIRS = Collections.unmodifiableSet(
+            BridgeMaterial.getBySuffix("_wool_stairs", AlmostBoolean.YES));
+
+    public static final Set<Material> CONCRETE_STAIRS = Collections.unmodifiableSet(
+            BridgeMaterial.getBySuffix("_concrete_stairs", AlmostBoolean.YES));
 
     public static final Set<Material> SPAWN_EGGS = Collections.unmodifiableSet(add(
             BridgeMaterial.getBySuffix("_spawn_egg", AlmostBoolean.YES, "legacy"),
@@ -565,6 +581,10 @@ public class MaterialUtil {
                     "legacy"
                     ), "wool"));
 
+    /** Blocks mined faster with shears that use the wool breaking profile. */
+    public static final Set<Material> WOOL_SHEARS_BLOCKS = Collections.unmodifiableSet(join(
+            WOOL_BLOCKS, WOOL_STAIRS, WOOL_SLABS));
+
     ///////////////////////////////
     // Collections of collections
     ///////////////////////////////
@@ -590,7 +610,7 @@ public class MaterialUtil {
                     "twisting_vines", "twisting_vines_plant",
                     "mangrove_propagule", "pink_petals", "torchflower", "torchflower_crop",
                     "pitcher_plant", "open_eyeblossom", "closed_eyeblossom", "pale_hanging_moss",
-                    "leaf_litter", "cactus_flower", "short_dry_grass", "tall_dry_grass", "wildflowers",
+                    "leaf_litter", "cactus_flower", "short_dry_grass", "tall_dry_grass", "wildflowers", "red_shrub",
                     "golden_dandelion"
                     ),
             new HashSet<Material>(Arrays.asList(BridgeMaterial.TALL_GRASS, 
